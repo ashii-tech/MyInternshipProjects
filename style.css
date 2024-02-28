@@ -1,122 +1,202 @@
-/* Import Google font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgb(130, 106, 251);
+body{
+    line-height: 1.5;
 }
-.container {
-  position: relative;
-  max-width: 700px;
-  width: 100%;
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
 }
-.container header {
-  font-size: 1.5rem;
-  color: #333;
-  font-weight: 500;
-  text-align: center;
+img{
+    width: 100%;
+    display: block;
 }
-.container .form {
-  margin-top: 30px;
+.img-display{
+    overflow: hidden;
 }
-.form .input-box {
-  width: 100%;
-  margin-top: 20px;
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
 }
-.input-box label {
-  color: #333;
+.img-showcase img{
+    min-width: 100%;
 }
-.form :where(.input-box input, .select-box) {
-  position: relative;
-  height: 50px;
-  width: 100%;
-  outline: none;
-  font-size: 1rem;
-  color: #707070;
-  margin-top: 8px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 0 15px;
+.img-select{
+    display: flex;
 }
-.input-box input:focus {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+.img-item{
+    margin: 0.3rem;
 }
-.form .column {
-  display: flex;
-  column-gap: 15px;
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
 }
-.form .gender-box {
-  margin-top: 20px;
+.img-item:hover{
+    opacity: 0.8;
 }
-.gender-box h3 {
-  color: #333;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 8px;
+.product-content{
+    padding: 2rem 1rem;
 }
-.form :where(.gender-option, .gender) {
-  display: flex;
-  align-items: center;
-  column-gap: 50px;
-  flex-wrap: wrap;
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
 }
-.form .gender {
-  column-gap: 5px;
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
 }
-.gender input {
-  accent-color: rgb(130, 106, 251);
+.product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
 }
-.form :where(.gender input, .gender label) {
-  cursor: pointer;
+.product-link:hover{
+    opacity: 0.9;
 }
-.gender label {
-  color: #707070;
+.product-rating{
+    color: #ffc107;
 }
-.address :where(input, .select-box) {
-  margin-top: 15px;
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
 }
-.select-box select {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  color: #707070;
-  font-size: 1rem;
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
 }
-.form button {
-  height: 55px;
-  width: 100%;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: 30px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: rgb(130, 106, 251);
+.product-price span{
+    font-weight: 400;
 }
-.form button:hover {
-  background: rgb(88, 56, 250);
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
 }
-/*Responsive*/
-@media screen and (max-width: 500px) {
-  .form .column {
-    flex-wrap: wrap;
-  }
-  .form :where(.gender-option, .gender) {
-    row-gap: 15px;
-  }
+.new-price span{
+    color: #256eff;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin: 1.5rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.purchase-info input{
+    width: 60px;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .btn:first-of-type{
+    background: #256eff;
+}
+.purchase-info .btn:last-of-type{
+    background: #f64749;
+}
+.purchase-info .btn:hover{
+    opacity: 0.9;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
 }
